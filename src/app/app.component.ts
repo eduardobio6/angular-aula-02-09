@@ -9,5 +9,8 @@ export class AppComponent {
   name = 'EduardoApp';
   nome = 'Carlos Eduardo'
   nasc = 1997;
-  idade = 2022 - this.nasc;
+  
+  getIdade(){
+    return 2022 - this.nasc;
+  }
 }
