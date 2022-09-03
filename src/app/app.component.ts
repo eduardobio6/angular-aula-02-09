@@ -6,27 +6,29 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'EduardoApp';
-  nome = 'Carlos Eduardo';
-  nasc = 1997;
+  name = 'TabataApp';
   counter = 0;
+  desc = 0;
+  text = '-';
   timer = setInterval(() => {
     this.counter = this.counter + 1;
-  }, 1000);
+  }, 100);
 
-  getIdade() {
-    return 2022 - this.nasc;
-  }
-
-  getMinutos() {
-    return Math.trunc(this.counter / 60);
+  getRound() {
+    return Math.trunc(this.counter / 30);
   }
 
   getSegundos() {
-    return Math.trunc(this.counter % 60);
+    return Math.trunc(this.counter % 30);
   }
 
-  getNumbers() {
-    return [2, 5, 7, 13, 22, 69, 100, 103, 99];
+  getZero() {
+    if (this.getRound() >= 9) {
+      return (this.counter = 0);
+    }
   }
+
+  /*getNumbers() {
+    return [2, 5, 7, 13, 22, 69, 100, 103, 99];
+  }*/
 }
