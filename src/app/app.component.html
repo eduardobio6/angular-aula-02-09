@@ -1,17 +1,44 @@
 <h1>{{ name }}</h1>
+<div class="tabata">
+  <div id="tabataCards">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h2>
+          Round: {{ getRound() }}
+          <span *ngIf="getRound() >= 9">{{ getZero() }}TERMINOU!</span>
+        </h2>
+      </div>
+    </div>
 
-<hr />
-<h2>
-  Round: {{ getRound() }}:
-  <span *ngIf="getRound() == 0">PREPARE-SE!</span>
-  <span *ngIf="getRound() >= 9">{{ getZero() }}TERMINOU!</span>
-</h2>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h2><span *ngIf="getRound() == 0">PREPARE-SE!</span></h2>
 
-<span *ngIf="getRound() >= 1">
-  <h2>
-    Tempo: {{ getSegundos() }}s
-    <span *ngIf="getSegundos() <= 10">DESCANSE!</span>
-    <span *ngIf="getSegundos() >= 11">WORK!</span>
-  </h2>
-</span>
-<hr />
+        <span *ngIf="getRound() >= 1">
+          <h2>
+            Tempo: {{ getSegundos() }}s
+            <span *ngIf="getSegundos() <= 10">DESCANSE!</span>
+            <span *ngIf="getSegundos() >= 11">WORK!</span>
+          </h2>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+
+  .tabataTimers{
+      background-color: purple;
+      padding: 50px;
+    }
+
+    #tabataCards{
+      display: flex;
+      flex-direction: row;
+    }
+    .card{
+      margin: 5px;
+    }
+</style>
