@@ -11,3 +11,9 @@
 </h2>
 <hr />
 <h2>Contador: {{ getMinutos() }}:{{ getSegundos() }}</h2>
+<hr />
+<div *ngFor="let n of getNumbers()">
+  {{ n }}:
+  <span *ngIf="n % 2 == 0">PAR!</span>
+  <span *ngIf="n % 2 != 0">IMPAR!</span>
+</div>
